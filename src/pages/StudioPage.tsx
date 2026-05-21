@@ -4,6 +4,62 @@ import { avatarMessages, profilingMessages, studioTasks } from "../data/mock";
 import type { ChatMessage, StudioTab } from "../types";
 import { AvatarBubble, Badge, ChatInput, ProgressBar } from "../components/ui";
 
+const studioAvatarMessages: ChatMessage[] = [
+  ...avatarMessages,
+  {
+    id: 101,
+    author: "许宇轩",
+    fromUser: true,
+    content: "如果我要把 Wanstar 的用户端做得更像一个每天会用的产品，而不是展示页，你会先调整哪里？",
+  },
+  {
+    id: 102,
+    author: "Yuxuan.A",
+    role: "Version 0.3 Preview",
+    content:
+      "我会先调整信息入口。用户不应该先看到品牌解释，而应该先看到三个可行动的工作区：继续构建自己的分身、向自己的分身验证一个判断、发起一个圆桌协同。这样 Wanstar 的价值不是被讲出来，而是在一次使用路径里被体验到。",
+  },
+  {
+    id: 103,
+    author: "许宇轩",
+    fromUser: true,
+    content: "那分身对话本身应该承担什么作用？只是测试像不像我吗？",
+  },
+  {
+    id: 104,
+    author: "Yuxuan.A",
+    role: "Version 0.3 Preview",
+    content:
+      "不只是像不像。它应该承担三个作用：第一，帮助你检查系统是否理解你的判断方式；第二，把高置信表达沉淀成训练素材；第三，在你准备进入圆桌之前，先让自己的分身帮你把问题整理成更适合协同讨论的版本。",
+  },
+  {
+    id: 105,
+    author: "许宇轩",
+    fromUser: true,
+    content: "如果我担心这个产品看起来像普通 AI 聊天工具，你会怎么避免？",
+  },
+  {
+    id: 106,
+    author: "Yuxuan.A",
+    role: "Version 0.3 Preview",
+    content:
+      "我会避免把重点放在“问答能力”上，而是突出“人的认知结构可以被持续校准，并参与协作”。在界面上，单聊之后要自然出现两个动作：把这段话加入训练素材，或者把这个问题带入圆桌，让其他人的数字化身参与讨论。",
+  },
+  {
+    id: 107,
+    author: "许宇轩",
+    fromUser: true,
+    content: "你觉得现在最需要补充我的哪类样本？",
+  },
+  {
+    id: 108,
+    author: "Yuxuan.A",
+    role: "Version 0.3 Preview",
+    content:
+      "目前结构判断和商业闭环样本比较多，但冲突处理、情绪反应、日常偏好还不够。换句话说，我已经能模仿你如何判断一个项目是否成立，但还需要更多样本来理解你在压力、分歧和不确定关系里的真实反应。",
+  },
+];
+
 function ProfilingTaskList() {
   return (
     <section className="flex min-h-0 w-[320px] flex-col gap-4">
@@ -95,7 +151,7 @@ function MessageCard({
 function StudioChatPanel({ onCalibration }: { onCalibration: (text: string) => void }) {
   const [tab, setTab] = useState<StudioTab>("profiling");
   const [profiling, setProfiling] = useState<ChatMessage[]>(profilingMessages);
-  const [avatarChat, setAvatarChat] = useState<ChatMessage[]>(avatarMessages);
+  const [avatarChat, setAvatarChat] = useState<ChatMessage[]>(studioAvatarMessages);
 
   const tabs: { key: StudioTab; label: string }[] = [
     { key: "profiling", label: "侧写对话" },
