@@ -98,8 +98,8 @@ export function AvatarChatPage({ onInviteToRoundtable }: { onInviteToRoundtable:
   };
 
   return (
-    <main className="flex min-h-0 flex-1 gap-5 p-5">
-      <aside className="flex min-h-0 w-[340px] flex-col gap-4">
+    <main className="flex h-[calc(100vh-5rem)] min-h-[720px] items-stretch gap-5 p-5">
+      <aside className="flex h-full min-h-0 w-[340px] flex-col gap-4">
         <div className="glass-card rounded-[24px] p-5">
           <div className="flex items-center gap-3">
             <div className="brand-gradient grid h-11 w-11 place-items-center rounded-2xl text-white">
@@ -146,7 +146,7 @@ export function AvatarChatPage({ onInviteToRoundtable }: { onInviteToRoundtable:
         </div>
       </aside>
 
-      <section className="glass-card flex min-w-[650px] flex-1 flex-col overflow-hidden rounded-[24px]">
+      <section className="glass-card flex h-full min-w-[650px] flex-1 flex-col overflow-hidden rounded-[24px]">
         <div className="border-b border-slate-200 p-5">
           <div className="flex items-start justify-between gap-4">
             <div className="flex items-center gap-4">
@@ -172,7 +172,7 @@ export function AvatarChatPage({ onInviteToRoundtable }: { onInviteToRoundtable:
           </div>
         </div>
 
-        <div className="min-h-0 flex-1 space-y-5 overflow-auto p-5">
+        <div className="min-h-0 flex-1 space-y-5 overflow-y-auto p-5">
           {active.messages.map((message) => (
             <div key={message.id} className={`flex gap-3 ${message.fromUser ? "justify-end" : "justify-start"}`}>
               {!message.fromUser && <AvatarBubble name={message.author} active={message.author === "Yuxuan.A"} />}
@@ -211,7 +211,7 @@ export function AvatarChatPage({ onInviteToRoundtable }: { onInviteToRoundtable:
         </div>
       </section>
 
-      <aside className="flex min-h-0 w-[340px] flex-col gap-4 overflow-auto">
+      <aside className="flex h-full min-h-0 w-[340px] flex-col gap-4 overflow-y-auto">
         {notice && <div className="rounded-[22px] border border-emerald-100 bg-emerald-50 p-4 text-sm font-bold text-emerald-800">{notice}</div>}
 
         <div className="glass-card rounded-[24px] p-5">

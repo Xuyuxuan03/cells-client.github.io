@@ -62,7 +62,7 @@ const studioAvatarMessages: ChatMessage[] = [
 
 function ProfilingTaskList() {
   return (
-    <section className="flex min-h-0 w-[320px] flex-col gap-4">
+    <section className="flex h-full min-h-0 w-[320px] flex-col gap-4">
       <div className="glass-card rounded-[24px] p-5">
         <div className="flex items-center gap-3">
           <div className="grid h-11 w-11 place-items-center rounded-2xl bg-blue-50 text-blue-600">
@@ -187,7 +187,7 @@ function StudioChatPanel({ onCalibration }: { onCalibration: (text: string) => v
   };
 
   return (
-    <section className="glass-card flex min-w-[520px] flex-1 flex-col overflow-hidden rounded-[24px]">
+    <section className="glass-card flex h-full min-w-[520px] flex-1 flex-col overflow-hidden rounded-[24px]">
       <div className="flex items-center justify-between border-b border-slate-200 px-5 py-4">
         <div className="flex gap-2">
           {tabs.map((item) => (
@@ -210,7 +210,7 @@ function StudioChatPanel({ onCalibration }: { onCalibration: (text: string) => v
         </div>
       )}
 
-      <div className="min-h-0 flex-1 space-y-5 overflow-auto p-5">
+      <div className="min-h-0 flex-1 space-y-5 overflow-y-auto p-5">
         {tab === "profiling" && profiling.map((message) => <MessageCard key={message.id} message={message} />)}
         {tab === "avatar" && avatarChat.map((message) => <MessageCard key={message.id} message={message} avatarMode onFeedback={onCalibration} />)}
         {tab === "calibration" && (
@@ -264,7 +264,7 @@ function StudioChatPanel({ onCalibration }: { onCalibration: (text: string) => v
 
 function CognitiveProfilePanel({ calibrationStatus }: { calibrationStatus: string }) {
   return (
-    <aside className="flex min-h-0 w-[340px] flex-col gap-4 overflow-auto">
+    <aside className="flex h-full min-h-0 w-[340px] flex-col gap-4 overflow-y-auto">
       <div className="glass-card rounded-[24px] p-5">
         <div className="flex items-center gap-3">
           <div className="grid h-11 w-11 place-items-center rounded-2xl bg-violet-50 text-violet-600">
@@ -351,7 +351,7 @@ export function StudioPage() {
   };
 
   return (
-    <main className="flex min-h-0 flex-1 gap-5 p-5">
+    <main className="flex h-[calc(100vh-5rem)] min-h-[720px] items-stretch gap-5 p-5">
       <ProfilingTaskList />
       <StudioChatPanel onCalibration={handleCalibration} />
       <CognitiveProfilePanel calibrationStatus={calibrationStatus} />
