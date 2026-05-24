@@ -230,7 +230,7 @@ export function RoundtablePage({ participants }: { participants: AvatarProfile[]
   return (
     <main className="flex min-h-0 flex-1 gap-5 p-5">
       <RoundtableList projects={roundtableProjects} active={activeProject} onSelect={handleProjectSelect} />
-      <section className="glass-card flex min-w-[660px] flex-1 flex-col rounded-[24px]">
+      <section className="glass-card flex min-w-[660px] flex-1 flex-col overflow-hidden rounded-[24px]">
         <div className="border-b border-slate-200 p-5">
           <div className="flex items-start justify-between gap-4">
             <div>

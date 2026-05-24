@@ -26,7 +26,7 @@ export function AppShell({
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex min-h-screen bg-[#f4f7fb] text-slate-900">
+    <div className="flex h-screen overflow-hidden bg-[#f4f7fb] text-slate-900">
       <aside className="fixed inset-y-0 left-0 z-20 flex w-60 flex-col bg-[#121827] px-4 py-5 text-white">
         <div className="flex items-center gap-3 px-2">
           <div className="brand-gradient grid h-11 w-11 place-items-center rounded-2xl shadow-lg shadow-blue-950/30">
@@ -82,8 +82,8 @@ export function AppShell({
         </div>
       </aside>
 
-      <div className="ml-60 flex min-h-screen flex-1 flex-col">
-        <header className="sticky top-0 z-10 flex h-20 items-center justify-between border-b border-slate-200/80 bg-[#f4f7fb]/85 px-7 backdrop-blur">
+      <div className="ml-60 flex h-screen min-w-0 flex-1 flex-col overflow-hidden">
+        <header className="z-10 flex h-20 shrink-0 items-center justify-between border-b border-slate-200/80 bg-[#f4f7fb]/85 px-7 backdrop-blur">
           <div>
             <div className="flex items-center gap-2 text-xs font-semibold text-slate-500">
               <CircleDot size={13} className="text-emerald-500" />
@@ -102,7 +102,7 @@ export function AppShell({
             </button>
           </div>
         </header>
-        {children}
+        <div className="min-h-0 flex-1 overflow-hidden">{children}</div>
       </div>
     </div>
   );

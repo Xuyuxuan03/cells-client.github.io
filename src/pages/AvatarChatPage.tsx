@@ -146,7 +146,7 @@ export function AvatarChatPage({ onInviteToRoundtable }: { onInviteToRoundtable:
         </div>
       </aside>
 
-      <section className="glass-card flex min-w-[650px] flex-1 flex-col rounded-[24px]">
+      <section className="glass-card flex min-w-[650px] flex-1 flex-col overflow-hidden rounded-[24px]">
         <div className="border-b border-slate-200 p-5">
           <div className="flex items-start justify-between gap-4">
             <div className="flex items-center gap-4">

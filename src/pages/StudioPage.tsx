@@ -187,7 +187,7 @@ function StudioChatPanel({ onCalibration }: { onCalibration: (text: string) => v
   };
 
   return (
-    <section className="glass-card flex min-w-[520px] flex-1 flex-col rounded-[24px]">
+    <section className="glass-card flex min-w-[520px] flex-1 flex-col overflow-hidden rounded-[24px]">
       <div className="flex items-center justify-between border-b border-slate-200 px-5 py-4">
         <div className="flex gap-2">
           {tabs.map((item) => (
