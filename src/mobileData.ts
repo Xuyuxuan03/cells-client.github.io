@@ -5,7 +5,7 @@ export const mobileUser = {
   title: "Founder",
   avatarName: "Yuxuan.A",
   buildProgress: 72,
-  image: "/avatar-yuxuan.svg",
+  image: "avatar-yuxuan.svg",
 };
 
 export const mobileTasks: ProfilingTask[] = [
@@ -75,11 +75,11 @@ export const mobileAvatars: AvatarProfile[] = [
 ];
 
 export const avatarImages: Record<string, string> = {
-  "Yuxuan.A": "/avatar-yuxuan.svg",
-  "Mira.VC": "/avatar-mira.svg",
-  "Kai.Product": "/avatar-kai.svg",
-  "Dr.Lin.Care": "/avatar-lin.svg",
-  "Sora.Brand": "/avatar-sora.svg",
+  "Yuxuan.A": "avatar-yuxuan.svg",
+  "Mira.VC": "avatar-mira.svg",
+  "Kai.Product": "avatar-kai.svg",
+  "Dr.Lin.Care": "avatar-lin.svg",
+  "Sora.Brand": "avatar-sora.svg",
 };
 
 export const mobileThreads: Record<string, ChatMessage[]> = {

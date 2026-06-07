@@ -36,7 +36,9 @@ const tabItems: { key: MobileTab; label: string; icon: typeof Home }[] = [
 ];
 
 function AvatarImage({ avatar, size = "h-12 w-12" }: { avatar: string; size?: string }) {
-  return <img src={avatarImages[avatar] ?? "/avatar-yuxuan.svg"} alt={avatar} className={`${size} shrink-0 rounded-2xl object-cover shadow-sm`} />;
+  const fileName = avatarImages[avatar] ?? "avatar-yuxuan.svg";
+  const src = `${import.meta.env.BASE_URL}${fileName}`;
+  return <img src={src} alt={avatar} className={`${size} shrink-0 rounded-2xl object-cover shadow-sm`} />;
 }
 
 function Pill({ children, active = false }: { children: React.ReactNode; active?: boolean }) {
